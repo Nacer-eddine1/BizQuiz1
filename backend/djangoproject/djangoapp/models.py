@@ -1,7 +1,8 @@
-from django.contrib.auth.models import AbstractUser, Group, Permission,BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractUser, Group, Permission, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+# Custom User Manager for handling user creation
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
@@ -11,12 +12,13 @@ class CustomUserManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
         return user
-    
+
     def create_superuser(self, email, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         return self.create_user(email, password, **extra_fields)
 
+# Custom User model inheriting from AbstractUser and PermissionsMixin
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=30, unique=True)
@@ -35,6 +37,7 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
+# Quiz model for storing information about quizzes
 class Quiz(models.Model):
     title = models.CharField(max_length=255)
     difficulty = models.CharField(max_length=20)
@@ -43,6 +46,7 @@ class Quiz(models.Model):
     def __str__(self):
         return self.title
 
+# QuizScore model for storing user scores in quizzes
 class QuizScore(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='quiz_scores')
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='quiz_scores')
@@ -51,6 +55,7 @@ class QuizScore(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.quiz.title}"
 
+# Question model for storing questions within quizzes
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     text = models.TextField()
@@ -58,6 +63,7 @@ class Question(models.Model):
     def __str__(self):
         return self.text
 
+# Answer model for storing answer options for questions
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     text = models.CharField(max_length=255)
@@ -66,6 +72,7 @@ class Answer(models.Model):
     def __str__(self):
         return self.text
 
+# AnswerSubmission model for storing user submissions for quiz questions
 class AnswerSubmission(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='answer_submissions')
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='answer_submissions')
