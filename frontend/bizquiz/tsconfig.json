@@ -21,7 +21,8 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "types": ["@ng-bootstrap/ng-bootstrap"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

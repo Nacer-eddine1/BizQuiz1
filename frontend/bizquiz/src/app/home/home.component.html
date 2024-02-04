@@ -1,1 +1,90 @@
-<p>home works!</p>
+<div class="bbbbbbbb">
+<main class="main" [class.active]="menuVariable">
+        
+    <section class="home">
+        <div class="home-content">
+            <h1>Quiz Website</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint aspernatur natus voluptates ad nostrum nam porro veritatis ut, ab architecto. Perspiciatis, praesentium quos sit dicta repellat sed exercitationem veniam?</p>
+            <div class="btns">
+                <button class="start-btn" (click)="openMenu()"><fa-icon [icon]="faClipboardQuestion"></fa-icon> Start Quiz</button>
+                <button class="start-btn">Generate Quiz</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="popup-info" [class.active]="menuVariable">
+    <h2>Quiz Guide</h2>
+    <span class="info">1.Lorem ipsum dolor sit, amet consectetur.</span>
+    <span class="info">2.Lorem ipsum dolor sit, amet consectetur adipisicing.</span>
+    <span class="info">3.Lorem ipsum dolor sit, amet cons.</span>
+    <span class="info">4.Lorem ipsum dolor sit, amet.</span>
+    <span class="info">5.Lorem ipsum dolor sit, amet consectetur adipis.</span>
+    <div class="btn-group">
+        <button class="info-btn exit-btn" (click)="closeMenu()">Exit Quiz</button>
+        <a href="#" class="info-btn continue-btn">Continue</a>
+    </div>
+</div>
+
+<br>
+
+<main class="generation" [class.active]="menuVariable">
+    <div class="card-container" [class.active]="menuVariable">
+        <div *ngFor="let e of data_card" class="card">
+            <img src="../../assets/pictures/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <div class="card-content">
+                <h3 class="card-name">{{e.name}}</h3>
+                <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius cupiditate consectetur unde nihil? Asperiores, autem blanditiis.</p><br>
+                <a href="" class="btn">Generate</a>
+            </div>
+        </div>
+
+        <!-- <div class="card">
+            <img src="../../assets/pictures/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <div class="card-content">
+                <h3>Card 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius cupiditate consectetur unde nihil? Asperiores, autem blanditiis.</p><br>
+                <a href="" class="btn">Generate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../../assets/pictures/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <div class="card-content">
+                <h3>Card 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius cupiditate consectetur unde nihil? Asperiores, autem blanditiis.</p><br>
+                <a href="" class="btn">Generate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../../assets/pictures/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <div class="card-content">
+                <h3>Card 4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius cupiditate consectetur unde nihil? Asperiores, autem blanditiis.</p><br>
+                <a href="" class="btn">Generate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../../assets/pictures/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <div class="card-content">
+                <h3>Card 5</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius cupiditate consectetur unde nihil? Asperiores, autem blanditiis.</p><br>
+                <a href="" class="btn">Generate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../../assets/pictures/ai-technology-brain-background-digital-transformation-concept.jpg" alt="">
+            <div class="card-content">
+                <h3>Card 6</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius cupiditate consectetur unde nihil? Asperiores, autem blanditiis.</p><br>
+                <a href="" class="btn">Generate</a>
+            </div>
+        </div> -->
+
+    </div>
+</main>
+
+</div>

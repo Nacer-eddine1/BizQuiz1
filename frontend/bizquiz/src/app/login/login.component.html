@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div id="container" class="container h-width py-5 login-component">
+    <div class="title"><h1>Log In</h1></div>
+    <div class="social-container">
+        <a href="#" class="social">
+            <fa-icon [icon] = "faFacebookF"></fa-icon>
+            <!-- <i class="fab fa-facebook-f"></i> -->
+        </a>
+        <a href="#" class="social">
+            <fa-icon [icon] = "faGooglePlusG"></fa-icon>
+        </a>
+        <a href="#" class="social">
+            <fa-icon [icon] = "faLinkedinIn"></fa-icon>
+        </a>
+    </div>
+    <div class="register"><a routerLink="/signup" id="forgotten" class="forgot">Not registered? Create your account.</a></div>
+    <div class="inp py-3">
+        <form [formGroup]="form" (submit)="login()">
+            <div class="infield">
+                <input formControlName="email" type="email" placeholder="Email" name="email"/>
+                <label></label>
+            </div>
+            <div class="infield">
+                <input formControlName="password" type="password" placeholder="Password" />
+                <label></label>
+            </div>
+                <a href="#" class="forgot">Forgot your password?</a>
+                <button class="login" type="submit">Log In</button>
+                
+                
+        </form>
+    </div>
+</div>
