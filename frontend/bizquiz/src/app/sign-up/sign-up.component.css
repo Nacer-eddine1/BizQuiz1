@@ -17,7 +17,12 @@
 
 body {
     height: 100vh;
-    background: #f6f5f7;
+    background: rgb(0, 126, 167);
+    background: linear-gradient(
+    45deg,
+    rgba(0, 23, 31, 1) 0%,
+    rgba(0, 126, 167, 1) 100%
+    );
     display: grid;
     place-content: center;
     font-family: 'Poppins', sans-serif;

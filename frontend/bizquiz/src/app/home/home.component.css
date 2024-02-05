@@ -135,6 +135,7 @@ html, body { padding: 0; margin: 0;}
     border-top: 1px solid #999;
     margin-top: 10px;
     padding: 15px 0 7px;
+    border-radius: 0px;
 }
 
 .popup-info .btn-group .info-btn{

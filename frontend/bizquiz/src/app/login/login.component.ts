@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 import {
   faFacebookF,
   faGooglePlusG,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+  faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 import { CookieService } from 'ngx-cookie-service';
 import { finalize } from 'rxjs';
 

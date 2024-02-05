@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faClipboardQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardQuestion, faMicrochip } from '@fortawesome/free-solid-svg-icons';
 import {
   NgbAccordionBody,
   NgbAccordionButton,
@@ -14,6 +14,7 @@ import {
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  faMicrochip = faMicrochip
   faClipboardQuestion = faClipboardQuestion;
   ngbAccordionItem = NgbAccordionItem;
   ngbAccordionHeader = NgbAccordionHeader;

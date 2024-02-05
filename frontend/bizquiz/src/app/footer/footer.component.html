@@ -1,1 +1,37 @@
-<p>footer works!</p>
+<footer class="footer">
+    <div class="footer-container container grid">
+      <div class="footer-content grid">
+          <a href="home.html" class="footer-logo logo"><img src="../../assets/pictures/bizquiz logo.png" alt="BizQuiz"> </a>
+
+          <ul class="footer-links">
+              <li>
+                  <a routerLink="/" class="footer-link">Home</a>
+              </li>
+              <li>
+                  <a routerLink="/about" class="footer-link">About Us</a>
+
+              </li>
+              <li>
+                  <a routerLink="/contact" class="footer-link">Contact Us</a>
+                  <div class="social-container">
+                    <a href="#" class="social">
+                        <fa-icon [icon] = "faFacebookF"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social">
+                        <fa-icon [icon] = "faInstagram"></fa-icon>
+                    </a>
+                    <a href="#" class="social">
+                        <fa-icon [icon] = "faLinkedinIn"></fa-icon>
+                    </a>
+                </div>
+
+              </li>
+          </ul>
+      </div>
+
+      <span class="footer-copy">
+          &#169; All Rights Reserved By BizQuiz
+      </span>
+    </div>
+  </footer>

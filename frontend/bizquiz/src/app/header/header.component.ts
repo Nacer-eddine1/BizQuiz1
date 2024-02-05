@@ -1,7 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { faClose, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faBars, faRightToBracket, faCircleUser,
+  faUser,
+  faHouse,
+  faInfo,
+  faAddressBook,
+  faGear,
+  faRightFromBracket,
+  faClipboardQuestion} from '@fortawesome/free-solid-svg-icons';
 import { Emitters } from '../emitters/emitters';
 
 @Component({
@@ -12,6 +19,17 @@ import { Emitters } from '../emitters/emitters';
 export class HeaderComponent implements OnInit {
   menuValue: boolean = false;
   menu_icon: string = 'bi bi-list';
+  faClose = faClose
+  faBars = faBars
+  faRightToBracket = faRightToBracket
+  faCircleUser   = faCircleUser
+  faUser  =   faUser
+  faHouse =   faHouse
+  faInfo =   faInfo
+  faAddressBook =   faAddressBook
+  faGear =   faGear
+  faRightFromBracket =   faRightFromBracket
+  faClipboardQuestion =   faClipboardQuestion
   openMenu() {
     this.menuValue = !this.menuValue;
     this.menu_icon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
@@ -47,3 +65,13 @@ export class HeaderComponent implements OnInit {
       .subscribe(() => (this.authenticated = false));
   }
 }
+
+const bgHeader = (): void => {
+  const header = document.getElementById('header');
+  if (header) {
+      window.scrollY >= 50 ? header.classList.add('bg-header') 
+                           : header.classList.remove('bg-header');
+  }
+}
+window.addEventListener('scroll', bgHeader);
+

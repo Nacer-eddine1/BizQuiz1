@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1900px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.footer{
+    /* background-color: #003459; */
+    background: linear-gradient(to right, #00171F, #007EA7);
+    box-shadow: 0 1px 6px black;
+    margin-top: 150px;
+    /* align-self: center; */
+}
+
+.footer-container{
+    padding-block: 4rem 2rem;
+    text-align: center;
+    row-gap: 5rem;
+}
+
+.footer-content{
+    row-gap: 2rem;
+    
+}
+
+.footer-content a,
+.footer-copy {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-logo img{
+    width: 50px;
+    transition: .5s;
+}
+
+.footer-logo img:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.footer-links{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.footer-links{
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-link{
+    font-weight: 600;
+    padding: 0 30px;
+    display: inline-block;
+}
+
+
+
+ul{
+    list-style-type: none;
+}
+
+.footer-link:hover{
+    /* nacer hover */
+}
+
+.social-container{
+    margin: 20px 0px;
+}
+
+.social-container a{
+    border: 1px solid #DDD;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    height: 40px;
+    width: 40px;
+    transition: .5s ease;
+}
+
+.social-container a:hover{
+    border: none;
+    background-color: #00171F;
+    color: #FFF;
+}
+
+@media screen and (max-width: 320px) {
+    .container{
+        margin-inline: 1rem;
+    }
+    
+    
+}
+
+@media screen and (max-width: 375px) {
+    .container{
+        margin-inline: 1rem;
+    }
+   
+    h1{
+        font-size: 36px;
+        line-height: 50px;
+    }
+    h2{
+        font-size: 26px;
+        line-height: 40px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    h1{
+        font-size: 36px;
+        line-height: 50px;
+    }
+    h2{
+        font-size: 26px;
+        line-height: 40px;
+    }
+    .footer-link{
+        
+        padding: 0 ;
+    }
+}

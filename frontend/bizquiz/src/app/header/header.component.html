@@ -1,4 +1,165 @@
-<header>
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <img src="../../assets/pictures/bizquiz logo.png" alt="">
+    </a>
+
+    <fa-icon [icon] = "faBars" id="menu-icon" (click)="openMenu()"></fa-icon>
+
+
+    <nav class="navbar" *ngIf="!authenticated" >
+        <div class="toggle"><fa-icon [icon] = "faClose" id="close-icon" (click)="closeMenu()"></fa-icon></div>
+        <a routerLink="signup">Sign Up</a>
+        <a routerLink="login" class="startbtn">Log In <fa-icon [icon]="faRightToBracket"></fa-icon></a>
+    </nav>
+
+
+    <div id="fluid" class="container-fluid" *ngIf="authenticated">
+        <button
+          class="navbar-toggler text-white"
+          id="acc"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <fa-icon id="profil" [icon]="faCircleUser"></fa-icon>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="content">
+            <div id="ofcnvhead" class="offcanvas-header ">
+              <div class="shape"></div>
+              <div class="shape2"></div>
+              <button
+                id="close"
+                type="button"
+                class="btn-close btn-close-white mx-3"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body pt-0 vh-100">
+              <div class="nav-data">
+                <div class="nav-mask">
+                  <div class="img">
+                    <!-- <img src="" alt="" /> -->
+                </div>
+                  <h1 class="profil-name">Mohammed Mask</h1>
+                </div>
+                <span class="nav-greeting">Greetings !</span>
+                <ul
+                  class="navbar-nav justify-content-end flex-grow-1 px-5 mx-4"
+                  id="nav-ul"
+                >
+                  <li class="nav-item">
+                    <a
+                      id="linkss"
+                      class="nav-link"
+                      aria-current="page"
+                      href="#my-acc"
+                    >
+                      <fa-icon id="my-acc" [icon]="faUser"></fa-icon> My account
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="linkss" class="nav-link" href="#home">
+                      <fa-icon id="hm" [icon]="faHouse"></fa-icon> Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="linkss" class="nav-link" href="#settings">
+                      <fa-icon id="inf" [icon]="faInfo"></fa-icon> Info
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="linkss" class="nav-link" href="#settings">
+                      <fa-icon id="my-cnct" [icon]="faAddressBook"></fa-icon>
+                      Contact
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="linkss" class="nav-link" href="#settings">
+                      <fa-icon id="sttngs" [icon]="faGear"></fa-icon> Settings
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="linkss-logout" class="nav-link" href="#settings">
+                      <fa-icon id="lgout" [icon]="faRightFromBracket"></fa-icon> Log
+                      Out
+                    </a>
+                  </li>
+                  <li id="start" class="nav-item">
+                    <a class="nav-link" href="#settings">
+                      <button id="start-quiz" data-tooltip=" Start Quiz">
+                        <fa-icon
+                          id="clipboard"
+                          [icon]="faClipboardQuestion"
+                        ></fa-icon>
+                      </button>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <header>
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-3">
@@ -31,4 +192,4 @@
             </div>
         </div>
     </div>
-</header>
+</header> -->

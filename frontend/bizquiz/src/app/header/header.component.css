@@ -1,6 +1,435 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
-li.links {
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 20px 10%;
+  background-color: transparent;
+  filter: drop-shadow(10px);
+  /* background-color: #000; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background-color .5s, box-shadow .4s;
+}
+
+.logo{
+  cursor: pointer;
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.logo:hover{
+  transform: scale(1.05);
+}
+
+.navbar{
+  padding: 0;
+}
+
+.navbar a{
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s ease;
+}
+
+.navbar a:hover,
+.navbar a.avtive{
+  color: #007EA7;
+  cursor: pointer;
+}
+
+.navbar .startbtn{
+  width: 110px;
+  height: 50px;
+  padding: 8px 12px;
+  background: #007EA7;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #007EA7;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.navbar .startbtn fa-icon{
+    font-size: 17px;
+}
+
+.navbar .startbtn:hover{
+  background: #00171F;
+  color: white;
+  box-shadow: none;
+}
+
+#menu-icon{
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+  color: #fff;
+  visibility: hidden;
+  transition: color .5s ease;
+}
+#close-icon{
+  visibility: hidden;
+}
+
+#menu-icon:hover,
+#close-icon:hover{
+  color: #00171F;
+}
+
+.bg-header{
+  /* background: #003459; */
+  background: linear-gradient(to right, #00171F, #007EA7);
+  /* background: linear-gradient( to right, rgba(0,23,31,1) 0%, rgba(0,126,167,0.7) 100%); */
+  box-shadow: 0 1px 6px black;
+}
+
+
+
+.header img{
+  height: 60px;
+}
+
+/* BODY NAVBAR */
+
+#fluid {
+  padding-left: 0;
+  padding-right: 0;
+  width: 65px;
+  height: 65px;
+  margin-right: 0;
+}
+
+/* BODY NAVBAR END */
+
+
+/* PFP & PF NAME  */
+
+div img {
+  width: 60px;
+}
+.img {
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+  background-image: url(https://cdn.iconscout.com/icon/free/png-512/free-avatar-372-456324.png?f=webp&w=512);
+  background-position: center;
+  background-size: cover;
+  /* background-color: black; */
+  /* background: linear-gradient(
+    224deg,
+    hsla(205, 85%, 20%, 1) -2%,
+    hsla(197, 100%, 45%, 1) 97%
+  ); */
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px #00171f;
+}
+
+.profil-name {
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+/* PFP & PF NAME END */
+
+/* GREETING & i & LINKS + HOVER */
+
+.nav-greeting {
+  color: #00171f;
+  font-size: larger;
+  margin-left: 40px;
+}
+
+#nav-ul {
+  margin-top: 20px;
+}
+
+#nav-ul li {
+  margin-top: 10px;
+  display: block;
+}
+
+#linkss-logout {
+  font-weight: 400;
+  color: #ea4e4e;
+  transition: 0.5s ease-in-out;
+}
+
+#linkss-logout fa-icon {
+  text-align: center;
+}
+
+#linkss-logout:hover {
+  font-weight: 500;
+  color: red;
+  transform: translateX(5%);
+}
+
+#linkss {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+#linkss fa-icon {
+  padding: 0;
+}
+
+#linkss:hover {
+  font-weight: 500;
+  color: #00171f;
+  transform: translateX(5%);
+}
+
+#my-acc {
+  margin-left: 1.8px;
+  margin-right: 7px;
+}
+
+#hm {
+  margin-right: 4.5px;
+}
+
+#inf {
+  margin-left: 6.3px;
+  margin-right: 11.5px;
+}
+
+#my-cnct {
+  margin-left: 1.5px;
+  margin-right: 5.5px;
+}
+
+#sttngs {
+  margin-left: 1.5px;
+  margin-right: 5.5px;
+}
+
+#lgout {
+  margin-left: 2.5px;
+  margin-right: 7px;
+}
+
+/* GREETING & i & LINKSS + HOVER END */
+
+/* TOTAL OFF CANVAS NAVBAR */
+
+.nav-data {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.nav-mask {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 30px;
+  margin-right: 40px;
+  margin-left: 40px;
+  border-bottom: 1px solid #00171f;
+}
+
+#offcanvasNavbar {
+  background-color: transparent;
+  box-shadow: 0 1px 6px black;
+}
+
+.shape {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: -2.5rem;
+  right: -2rem;
+  background-color: white;
+  filter: blur(500px);
+}
+
+/* TOTAL OFF CANVAS NAVBAR END */
+
+/* ACCOUNT LOGO + HOVER  */
+
+#acc {
+  border: none;
+  padding: 12px;
+  font-size: 40px;
+  transition: 1s;
+}
+
+#acc:hover {
+  transform: scale(1.3);
+}
+
+#acc:focus {
+  border: none;
+  box-shadow: none;
+}
+
+#profil {
+  transition: 0.3s ease-in-out;
+}
+
+#profil:hover {
+  color: #00171f;
+}
+
+/* ACCOUNT LOGO + HOVER END  */
+#head {
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 23, 31, 1) 0%,
+    rgba(0, 126, 167, 0.7) 100%
+  );
+  color: white;
+  padding: 0 134.3px;
+  box-shadow: 0 1px 6px black;
+  backdrop-filter: blur(10px);
+}
+
+/* SHAPE */
+
+.shape {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: -2.5rem;
+  right: -2rem;
+  background-color: white;
+  filter: blur(150px);
+}
+
+.shape2 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -3rem;
+  left: -1.5rem;
+  background-color: white;
+  filter: blur(300px);
+}
+
+/* SHAPE END*/
+
+/* STRAT QUIZ BUTTON */
+
+#start-quiz {
+  background: #007ea7;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  width: 150px;
+  border: 2px solid #fff;
+  padding: 10px;
+  margin: 40px auto 0;
+  margin-top: 100px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  box-shadow: 0 0 4px #606060;
+  /* outline: none; */
+  transition: 0.5s;
+  text-align: center;
+}
+
+#start-quiz:hover {
+  background: #00171f;
+  padding-left: 10px;
+  transition: 1s;
+  /* box-shadow: none; */
+}
+
+#start-quiz::after {
+  content: "";
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+#start-quiz:hover::after {
+  transition: 0.5s;
+  content: "  Start Quiz";
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  /* box-shadow: none; */
+}
+
+#clipboard {
+  padding-right: 5px;
+}
+
+/* STRAT QUIZ BUTTON END */
+
+.content {
+  /* z-index: -1; */
+  border-left: 2px solid #00171f;
+  backdrop-filter: blur(50px);
+  background-color: rgba(0, 125, 167, 0.205);
+  /* width: 100%; */
+}
+
+#start{
+  margin-bottom: 30px;
+  height: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* li.links {
     background-image: linear-gradient(
     to right,
     #54b3d6,
@@ -126,7 +555,7 @@ header {
 .start-btn:hover{
     background: #00171F;
     box-shadow: none;
-}
+} */
 
   /* button {
     position: relative;
