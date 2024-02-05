@@ -1,1 +1,33 @@
-<p>sign-up works!</p>
+<div id="container" class="container py-5">
+    <div class="title"><h1>Sign Up</h1></div>
+    <div class="social-container">
+        <a href="#" class="social">
+            <fa-icon [icon] = "faFacebookF"></fa-icon>
+            <!-- <i class="fab fa-facebook-f"></i> -->
+        </a>
+        <a href="#" class="social">
+            <fa-icon [icon] = "faGooglePlusG"></fa-icon>
+        </a>
+        <a href="#" class="social">
+            <fa-icon [icon] = "faLinkedinIn"></fa-icon>
+        </a>
+    </div>
+    <div class="register"><a routerLink="login" id="forgotten" class="forgot">Already have an account?</a></div>
+        <div class="sign-up-container">
+            <form [formGroup]="form" (submit)="signup()">
+                <div class="infield">
+                    <input formControlName="username" type="text" placeholder="username" />
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input formControlName="email" type="email" placeholder="Email" name="email"/>
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input formControlName="password" type="password" placeholder="Password" />
+                    <label></label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+</div>
