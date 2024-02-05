@@ -188,6 +188,8 @@ div img {
   font-weight: 400;
   color: #ea4e4e;
   transition: 0.5s ease-in-out;
+  user-select: none;
+  cursor: pointer;
 }
 
 #linkss-logout fa-icon {
