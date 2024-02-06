@@ -25,23 +25,43 @@
     gap: 1.5rem;
 }
 
+ul{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.bg-logo{
+    z-index: 0;
+    position: absolute;
+    left: -150px;
+    bottom: -1300px;
+    width: 558px;
+    height: 357px;
+    opacity: .4;
+    overflow: hidden;
+}
+
 .footer{
     /* background-color: #003459; */
-    background: linear-gradient(to right, #00171F, #007EA7);
+    background: linear-gradient(to right, #00171F, #007EA7) ;
     box-shadow: 0 1px 6px black;
     margin-top: 150px;
     /* align-self: center; */
+    min-height: fit-content;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .footer-container{
-    padding-block: 4rem 2rem;
+    padding-block: 3rem 2rem;
     text-align: center;
     row-gap: 5rem;
+    z-index: 2;
 }
 
 .footer-content{
     row-gap: 2rem;
-    
+    z-index: 1;
 }
 
 .footer-content a,
@@ -50,12 +70,29 @@
     text-decoration: none;
 }
 
+.footer-footer{
+    justify-content: space-between;
+    display: flex;
+    border-top: 1px solid white;
+    width: 70%;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+span{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
 .footer-logo{
     font-size: 1.5rem;
     font-weight: 600;
     justify-self: center;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 8px;
+    margin-top: 15px;
 }
 
 .footer-logo img{
@@ -90,12 +127,11 @@ ul{
     list-style-type: none;
 }
 
-.footer-link:hover{
-    /* nacer hover */
-}
+
 
 .social-container{
-    margin: 20px 0px;
+    margin-top: 20px ;
+    /* justify-content: space-between; */
 }
 
 .social-container a{
@@ -114,6 +150,10 @@ ul{
     border: none;
     background-color: #00171F;
     color: #FFF;
+}
+
+fa-icon{
+    color: #fff;
 }
 
 @media screen and (max-width: 320px) {
@@ -153,5 +193,18 @@ ul{
     .footer-link{
         
         padding: 0 ;
+    }
+    span{
+        font-size: 10px;
+        text-align: center;
+    }
+    .social-container{
+        width: 30%;
+        height: 30%;
+        font-size: 10px;
+    }
+    .social-container a{
+        width: 20px;
+        height: 20px;
     }
 }
