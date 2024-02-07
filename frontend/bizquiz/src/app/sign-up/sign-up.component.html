@@ -17,16 +17,60 @@
         <div class="sign-up-container">
             <form [formGroup]="form" (submit)="signup()">
                 <div class="infield">
-                    <input formControlName="username" type="text" placeholder="username" />
-                    <label></label>
+                    <input formControlName="username" type="text" autocomplete="false" placeholder="username" />
+                    <label class="label"></label>
                 </div>
                 <div class="infield">
-                    <input formControlName="email" type="email" placeholder="Email" name="email"/>
-                    <label></label>
+                    <input formControlName="email" type="email" autocomplete="false" placeholder="Email" name="email"/>
+                    <label class="label"></label>
+                
+                                            <!-- TEST -->
+                    <small *ngIf="email?.invalid && email?.touched">
+                        <span class="red" *ngIf="email.errors?.required">
+                            Email is required
+                            <br>
+                        </span>
+                    </small>
                 </div>
+
                 <div class="infield">
-                    <input formControlName="password" type="password" placeholder="Password" />
-                    <label></label>
+                    <input formControlName="password" type="password" placeholder="Password" autocomplete="false" />
+                    <label class="label"></label>
+                
+                
+
+                
+                    <div class="form-group" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                        <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('minlength')  ? 'red' : 'green'">
+                             <!-- icon -->
+                            must be at least 8 characters!
+                        </label>
+                        <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasNumber')  ? 'red' : 'green'">
+                            <!-- icon -->
+                            must contain at least 1 number!
+                        </label>
+                        <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasCapitalCase')  ? 'red' : 'green'">
+                            <!-- icon -->
+                            must contain at least 1 in Capital Case!
+                        </label>
+                        <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasSmallCase')  ? 'red' : 'green'">
+                            <!-- icon -->
+                            must contain at least 1 Letter in Small Case!
+                        </label>
+                        <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasSpecialCharacters') ? 'red' : 'green'">
+                            <!-- icon -->
+                            must contain at least 1 Special Character!
+                        </label>
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="confirm" class="infield">
+                    <input formControlName="confirm_password" type="password" placeholder="Confirm Password" />
+                    <label class="label"></label>
                 </div>
                 <button type="submit">Sign Up</button>
             </form>

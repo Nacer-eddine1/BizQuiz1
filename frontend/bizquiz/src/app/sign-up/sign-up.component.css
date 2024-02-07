@@ -37,12 +37,13 @@ body {
 #container{
     position: relative;
     width: 500px;
-    height: 525px;
+    /* height: 525px; */
     background-color: #FFF;
     box-shadow: 25px 30px 55px #5557;
     border-radius: 13px;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 100px;
+    min-height: fit-content;
 }
 
 .form-container{
@@ -112,7 +113,11 @@ input{
     outline: none;
 }
 
-label{
+input.ng-invalid.ng-touched{
+    border-bottom: .9px solid red;
+}
+
+.label{
     position: absolute;
     left: 50%;
     top: 100%;
@@ -123,7 +128,40 @@ label{
     transition: .4s ease;
 }
 
-input:focus ~ label {
+.invalid_msg{
+    position: relative;
+    left: 0;
+    transform: none;
+    height: 25px;
+    width: 300px;
+    background-color: transparent;
+    display: block;
+    font-size: 12px;
+    color: white;
+}
+
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.green ~.label{
+    opacity: 1;
+}
+
+input.ng-invalid.ng-touched:focus ~ .label{
+    opacity: 0;
+}
+
+/* .invalid_msg{
+    font-size: 0.69rem !important;
+} */
+
+input:focus ~ .label {
     width: 100%;
 }
 
@@ -262,6 +300,12 @@ p{
     z-index: 5;
     animation: show .6s;
 }
+
+/* #confirm{
+    margin-top: 200px ;
+} */
+
+
 
 @keyframes show {
     0%, 50%{
