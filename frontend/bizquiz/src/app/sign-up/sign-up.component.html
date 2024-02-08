@@ -19,6 +19,14 @@
                 <div class="infield">
                     <input formControlName="username" type="text" autocomplete="false" placeholder="username" />
                     <label class="label"></label>
+
+                    <small *ngIf="username?.invalid && username?.touched">
+                        <span class="red" *ngIf="username.errors?.required">
+                            Username is required
+                            <br>
+                        </span>
+                    </small>
+
                 </div>
                 <div class="infield">
                     <input formControlName="email" type="email" autocomplete="false" placeholder="Email" name="email"/>
@@ -41,25 +49,25 @@
 
                 
                     <div class="form-group" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
-                        <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('minlength')  ? 'red' : 'green'">
+                        <label id="first-msg" class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('minlength')  ? 'red' : 'green'">
                              <!-- icon -->
-                            must be at least 8 characters!
+                            Must be at least 8 characters!
                         </label>
                         <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasNumber')  ? 'red' : 'green'">
                             <!-- icon -->
-                            must contain at least 1 number!
+                            Must contain at least 1 number!
                         </label>
                         <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasCapitalCase')  ? 'red' : 'green'">
                             <!-- icon -->
-                            must contain at least 1 in Capital Case!
+                            Must contain at least 1 in Capital Case!
                         </label>
                         <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasSmallCase')  ? 'red' : 'green'">
                             <!-- icon -->
-                            must contain at least 1 Letter in Small Case!
+                            Must contain at least 1 Letter in Small Case!
                         </label>
                         <label class="invalid_msg" [ngClass]="password.hasError('required') || password.hasError('hasSpecialCharacters') ? 'red' : 'green'">
                             <!-- icon -->
-                            must contain at least 1 Special Character!
+                            Must contain at least 1 Special Character!
                         </label>
                     </div>
                 </div>
@@ -71,8 +79,18 @@
                 <div id="confirm" class="infield">
                     <input formControlName="confirm_password" type="password" placeholder="Confirm Password" />
                     <label class="label"></label>
+
+                    <small class="red" *ngIf="confirmpassword?.invalid && (confirmpassword?.dirty || confirmpassword?.touched)">
+                        <span *ngIf="confirmpassword?.errors?.['required']">
+                            Please confirm your password
+                        </span>
+                        <span *ngIf="confirmpassword?.errors?.MatchingPassword">
+                            The password doesn't match
+                        </span>
+                        <!-- form.get('confirm_password')?.errors?.['mismatch'] -->
+                    </small>
                 </div>
-                <button type="submit">Sign Up</button>
+                <button [disabled]="form.invalid" type="submit">Sign Up</button>
             </form>
         </div>
     </div>   

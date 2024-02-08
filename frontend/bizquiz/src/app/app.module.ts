@@ -14,6 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { LayoutComponent } from './layout/layout.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CookieService } from 'ngx-cookie-service';
     HomeComponent,
     LoginComponent,
     SignUpComponent,
+    LayoutComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

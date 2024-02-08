@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
+import { AbstractControl, Form, FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import { faCancel, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { PatternValidatorsService } from '../shared/services/patternValidators/pattern-validators.service';
@@ -60,12 +60,29 @@ export class SignUpComponent implements OnInit {
           )  
         ]
       ]
-    });
+    }, { Validators: this.MatchingPassword('password', 'confirm_password')}
+    
+    );
   }
   signup(): void {
     this.http
       .post('http://localhost:8000/api/register', this.form.getRawValue())
       .subscribe(() => this.router.navigate(['/login']));
+  }
+
+  get f(){return this.form.controls}
+
+  MatchingPassword(controlName: string, matchingControlName: string){
+      return(formGroup:FormGroup)=>{
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+       
+        if(control.value !== matchingControl.value){
+          matchingControl.setErrors({MatchingPassword:true});
+        }else{
+          matchingControl.setErrors(null);
+        }
+      }
   }
 
   get username(){
@@ -87,7 +104,7 @@ export class SignUpComponent implements OnInit {
   faFacebookF = faFacebookF;
   faLinkedinIn = faLinkedinIn;
   faGooglePlusG = faGooglePlusG;
-  faCancel = faCancel;
+  faCircleXmark = faCircleXmark;
   faCheckCircle = faCheckCircle;
 
 // service confirm password

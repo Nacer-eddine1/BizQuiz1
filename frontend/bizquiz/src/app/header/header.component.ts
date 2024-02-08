@@ -10,6 +10,7 @@ import { faClose, faBars, faRightToBracket, faCircleUser,
   faRightFromBracket,
   faClipboardQuestion} from '@fortawesome/free-solid-svg-icons';
 import { Emitters } from '../emitters/emitters';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -39,7 +40,7 @@ export class HeaderComponent implements OnInit {
     this.menu_icon = 'bi bi-list';
   }
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient, private aut: AuthService) {}
   authenticated = false;
 
   ngOnInit(): void {
@@ -60,6 +61,8 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
+    localStorage.removeItem('loggedIn');
+    this.router.navigate(['/login']);
     this.http
       .post('http://localhost:8000/api/logout', {}, { withCredentials: true })
       .subscribe(() => (this.authenticated = false));
